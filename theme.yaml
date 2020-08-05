@@ -1,0 +1,31 @@
+name: Octotema
+description: 'Tema en blanco para OctoberCMS'
+author: Stephan
+homepage: ''
+code: ''
+#require:
+
+#--------------------------------------------------------------------------
+# THEME CONFIGURATION
+#--------------------------------------------------------------------------
+
+# form: config/fields.yaml
+
+form:
+  fields:
+    import_jquery:
+      label: Use jQuery?
+      type: switch
+      comment: Flick this switch to display content
+      on: "on"
+      off: "off"
+    import_framework:
+      label: Use October JS Framework?
+      type: switch
+      comment: Flick this switch to display content
+      on: "on"
+      off: "off"
+      trigger:
+        action: enable
+        field: import_jquery
+        condition: checked

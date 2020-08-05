@@ -1,0 +1,106 @@
+==
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <!-----------------viewport------------------------------->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-------------------SEO----------------------------->
+  <meta name="author" content="stephan">
+  <meta name="copyright" content="&copy; Stephan 2020">
+  <meta name="email" content="stephan@mail.com">
+  <meta name="keywords" content="foto, fotografia, boda, digital, recuerdos, video">
+  <meta name="robots">
+  <meta name="description" content="{{this.page.description}}">
+  <title>{{this.page.title}}</title>
+
+  <!------------------social------------------------------>
+  <meta property="og:url" content="https//:www.google.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blackparadox Fotografia">
+  <meta property="og:description" content="Expertos en hacer las cosas bien">
+  <meta property="og:image" content="https://www.blackparadox.com/image.jpg">
+
+  <!------------------favicon------------------------------>
+  <link rel="shortcut icon" href="favicon/favicon.ico?v.2" type="image/x-icon">
+  <link rel="icon" href="favicon/favicon.ico?v.2" type="image/x-icon">
+
+  <!-----------------------styles----------------------->
+  <!--------bootstrap---------->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+  <!--------custome---------->
+  <link href="{{ ['assets/less/theme.less']|theme }}" rel="stylesheet">
+  <link href="{{ ['assets/css/styles.css']|theme }}" rel="stylesheet">
+  {% styles %}
+</head>
+
+<!--*********************body*********************-->
+
+<body>
+
+  <!-- Header -->
+  <header id="layout-header">
+    {% partial 'site/header' %}
+  </header>
+
+  <!-- Content -->
+  <section id="layout-content">
+    {% page %}
+  </section>
+
+  <!-- Footer -->
+  <footer id="layout-footer">
+    {% partial 'site/footer' %}
+  </footer>
+
+  <!-----------------------scripts----------------------->
+  {% if this.theme.import_jquery  %}
+  <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+  {% endif %}
+
+  {% if this.theme.import_framework  %}
+  {% framework extras %}
+  {% endif %}
+
+  {% scripts %}
+</body>
+
+</html>
+
+<!-- this.page
+{
+  "translatable":  
+    ["title",
+    "description",
+    "meta_title",
+    "meta_description"],
+  "fileName":  "home.htm",
+  "content":  "title = \"home\"\r\nurl = \"\/\"\r\nlayout = \"main-theme\"\r\nis_hidden = 0\r\nrobot_index = \"index\"\r\nrobot_follow = \"follow\"\r\n==",
+  "mtime":  1596651166,
+  "markup":  "",
+  "code":  null,
+  "title":  "home",
+  "url":  "\/",
+  "layout":  "main-theme",
+  "is_hidden":  "0",
+  "robot_index":  "index",
+  "robot_follow":  "follow",
+  "description":  null,
+  "meta_title":  null,
+  "meta_description":  null,
+  "settings":  
+    {"title":  "home",
+    "url":  "\/",
+    "layout":  "main-theme",
+    "is_hidden":  "0",
+    "robot_index":  "index",
+    "robot_follow":  "follow",
+    "description":  null,
+    "meta_title":  null,
+    "meta_description":  null}
+} -->
